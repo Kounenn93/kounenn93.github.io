@@ -1,0 +1,68 @@
+/* 樣式初始化 */
+
+/* 去除常見標籤默認的 margin 和 padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 設置網頁統一的字體大小、行高、字體系列相關屬性 */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+}
+
+/* 去除列表默認樣式 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 去除默認的斜線效果 */
+em,
+i {
+  font-style: normal;
+}
+
+/* 去除a標籤默認底線，並設置默認文字顏色 */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* 設置img的垂直對齊方式為居中對齊，去除img底下默認的空隙 */
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/* 去除input默認樣式 */
+input {
+  border: none;
+  outline: none;
+  color: #333;
+}
+
+/* 去除標題標籤默認的粗體樣式 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+/* 去除u底線 */
+u{
+  text-decoration: none;
+}
+/* 去除粗體 */
+b,
+strong{
+  font-weight: 400;
+}
+
