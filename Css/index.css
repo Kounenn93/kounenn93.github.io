@@ -1,0 +1,103 @@
+
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+
+/* 點餐區 */
+.order h4 {
+    text-align: center;
+    margin: 50px;
+    font-size: 36px;
+}
+
+
+
+.order form {
+    padding-bottom: 30px;
+    text-align: center;
+    border-bottom: rgba(33, 33, 33, 0.5) solid 1px;
+}
+
+.order form label {
+    margin: 5px;
+}
+
+.order form b {
+    font-weight: 400;
+}
+
+.order form input,
+.order form select {
+    padding: 5px;
+    width: 120px;
+    height: 40px;
+    border: rgba(33, 33, 33, 0.5) solid 1px;
+    border-radius: 10px;
+}
+
+.order form select {
+    padding: 0;
+    width: 70px;
+    cursor: pointer;
+}
+
+.order form button {
+    width: 100px;
+    height: 50px;
+    background-color: #F4B7B5;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+.order form button:hover{
+    background-color: #E4C4C2
+}
+
+.view {
+    margin-top: 30px;
+    padding: 15px;
+    height: 1600px;
+}
+
+.view table {
+    border-collapse: collapse;
+    width: 800px;
+}
+
+.view table tr th {
+    height: 50px;
+    border-bottom: rgba(33, 33, 33, 0.5) solid 1px;
+}
+
+.view table tr td {
+    height: 50px;
+    text-align: center;
+}
+
+.view table tbody td:last-child {
+    text-align: right;
+}
+
+.view table tfoot td {
+    height: 100px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+    color: #A45D66;
+}
+
+/* 版權區 */
+.foot {
+    padding-top: 42px;
+    height: 80px;
+    background-color: rgb(33, 33, 33);
+    text-align: center;
+}
+
+.foot h6 {
+    color: #fff;
+    font-size: 14px;
+}

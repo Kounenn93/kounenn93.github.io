@@ -1,0 +1,69 @@
+body{
+    font-family: '微軟正黑體', sans-serif;
+    background-color: #F7F2E6; /* 米色系 */
+}
+.random {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 垂直排列 */
+    height: 100vh;
+    margin: 0;
+    border-bottom: 1px solid #A45D66;
+    
+}
+.random .container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #FFF3E3; /* 米色系 */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 600px; /* 限制容器的最大寬度 */
+    max-height: 100vh;
+    width: 90%; /* 設定容器的寬度為 90% */
+    margin-bottom: 2rem; /* 與下方點餐區域的間距 */
+}
+.random h1 {
+    color: #A45D66; /* 紅色系 */
+    margin-bottom: 2rem;
+}
+.random #result {
+    font-size: 2rem; /* 調整字體大小 */
+    margin: 1rem 0;
+    min-height: 2em;
+    color: #C3B19D; /* 調整為較深的顏色以提高可見性 */
+    font-weight: bold; /* 加粗字體 */
+}
+.random #menuImage {
+    margin: 0 auto;
+    max-width: 100%; /* 限制圖片最大寬度，根據容器大小自動縮放 */
+    max-height: 400px;
+    height: auto; /* 自動調整高度，保持比例 */
+    margin-top: 1rem; /* 圖片上方間距 */
+    border-radius: 10px; /* 圖片圓角 */
+}
+.random button {
+    margin-top: 20px;
+    background-color: #F4B7B5; /* 紅色系 */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.random button:hover {
+    background-color: #E4C4C2; /* 紅色系 */
+    display:;
+}
+
+.random #lock{
+    margin-left: 30px;
+}
+.random #lock:hover{
+    transform: scale(1.1);
+    cursor:;
+}
+
