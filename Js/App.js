@@ -54,26 +54,28 @@ const menuImages = {
 };
 
 function selectRandomShop() {
-    const resultElement = document.getElementById('result');
-    const menuImageElement = document.getElementById('menuImage');
     const randomIndex = Math.floor(Math.random() * drinkShops.length);
     const selectedShop = drinkShops[randomIndex];
 
-    resultElement.textContent = `今天就去 ${selectedShop} 吧！`;
+    // 將隨機選擇的結果儲存到 Firebase
+    lockRef.set({
+        isLocked: false, // 這裡設為未鎖定狀態
+        shop: selectedShop
+    });
 
-    // 顯示菜單圖片
-    menuImageElement.src = menuImages[selectedShop];
-    menuImageElement.alt = `${selectedShop} 的菜單`;
-    menuImageElement.style.display = "block";
-
+    // 本地更新畫面
+    document.getElementById('result').textContent = `今天就去 ${selectedShop} 吧！`;
+    document.getElementById('menuImage').src = menuImages[selectedShop];
+    document.getElementById('menuImage').style.display = 'block';
+    
     // 顯示鎖定按鈕
     document.getElementById('lock').style.display = "inline-block";
 }
 
 function lockSelection() {
-   const selectedShop = document.getElementById('result').textContent.replace('今天就去 ', '').replace(' 吧！', '');
-    
-    // 將鎖定狀態推送到 Firebase，讓所有使用者看到
+    const selectedShop = document.getElementById('result').textContent.replace('今天就去 ', '').replace(' 吧！', '');
+
+    // 將鎖定狀態推送到 Firebase，並保持飲料店不變
     lockRef.set({
         isLocked: true,
         shop: selectedShop
@@ -84,17 +86,15 @@ function lockSelection() {
 }
 
 function lockButtonState() {
-    // 禁用按鈕
     document.getElementById('randombutton').disabled = true;
     document.getElementById('lock').disabled = true;
     
-    // 更新按鈕樣式
     const lockButton = document.getElementById('lock');
     lockButton.style.backgroundColor = "#A45D66";
     lockButton.style.color = "#FFF3E3";
     lockButton.textContent = "已鎖定";
     lockButton.style.cursor = "not-allowed";
-    
+
     const rdButton = document.getElementById('randombutton');
     rdButton.style.cursor = "not-allowed";
 }
@@ -102,12 +102,16 @@ function lockButtonState() {
 // 監聽 Firebase 中 lockState 的變化，所有使用者同步更新
 lockRef.on('value', (snapshot) => {
     const data = snapshot.val();
-    if (data && data.isLocked) {
-        // 更新 UI，顯示鎖定的狀態及選擇的飲料店
+    if (data) {
+        // 顯示飲料店
         document.getElementById('result').textContent = `今天就去 ${data.shop} 吧！`;
         document.getElementById('menuImage').src = menuImages[data.shop];
         document.getElementById('menuImage').style.display = 'block';
-        lockButtonState(); // 更新按鈕樣式
+
+        // 如果已經鎖定，則更新鎖定按鈕狀態
+        if (data.isLocked) {
+            lockButtonState();
+        }
     }
 });
 
